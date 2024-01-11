@@ -2,9 +2,8 @@ class TasksController < ApplicationController
   def index
     ActiveRecord::Base.connected_to(role: :writing) do
       @tasks = Task.all
-      # sleep(5)
-    p "task index", ActiveRecord::Base.connection_pool.db_config.name
-  end
+      p "task index", ActiveRecord::Base.connection_pool.db_config.name
+    end
   end
 
   def new
